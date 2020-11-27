@@ -287,4 +287,8 @@ body {
 // burger menu
 .toggle-menu {
   margin-left: auto;
+  display: none;
+  @include mobile {
+    display: inline-flex;
+  }
 }

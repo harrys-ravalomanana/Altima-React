@@ -23,6 +23,7 @@ function HeaderTop(props) {
     let history = useHistory();
     history.listen(() => {
         document.body.classList.remove('favoris-open');
+        document.body.classList.remove('menu-open');
     })
 
     return (

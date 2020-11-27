@@ -45,6 +45,8 @@ Open the folder `test-integration/src/theme`
 
 ### `npm install`
 
+Will add the dependencies for the theme 
+
 ### `gulp`
 
 It will generate  css, fonts, img, json
