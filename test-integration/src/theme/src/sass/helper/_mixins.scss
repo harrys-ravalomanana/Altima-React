@@ -1,0 +1,108 @@
+@mixin flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@mixin PoppinsSemiBold() {
+  font-family: 'poppinssemibold';
+}
+
+@mixin PoppinsBold() {
+  font-family: 'poppinsbold';
+}
+
+@mixin BitterRegular() {
+  font-family: 'bitterregular';
+}
+
+@mixin BgFilter() {
+  &:before {
+    content: '';
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+@mixin ThirdBlock() {
+  margin: 0 20px;
+  width: 30.37%;
+  text-align: center;
+  @include tablet {
+    width: 30%;
+    margin: 0 2%;
+  }
+  @include mobile {
+    width: 100%;
+    margin: 20px auto;
+  }
+  &:first-child {
+    margin-left: 0;
+  }
+  &:nth-child(3) {
+    margin-right: 0;
+  }
+}
+
+@mixin Btn-rectangle {
+  cursor: pointer;
+  font-size: 18px;
+  color: $white;
+  background: #3e3e3e;
+  padding: 15px 35px;
+  border-radius: 6px;
+  border: 1px solid $white;
+  text-transform: uppercase;
+  margin: auto;
+  margin-bottom: 50px;
+  transition: 0.3s all;
+  text-decoration: none;
+}
+
+@mixin Btn-round($color : $pink, $focus: $white) {
+  font-size: 14.84px;
+  color: $white;
+  border-radius: 50px;
+  background: $color;
+  padding: 20px 34px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  border: 2px solid $color;
+  text-shadow: 1px 0 1px rgba(0, 0, 0, 0.7);
+  @include tablet {
+    padding: 12px 20px;
+    display: inline-block;
+  }
+  &:hover, &:focus, &:active {
+    background: $focus;
+    border-color: $focus;
+    color: $black;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (max-width: 1320px) {
+    @content;
+  }
+}

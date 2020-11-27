@@ -1,0 +1,34 @@
+
+.footer-top {
+  background: $pink;
+  width: 100%;
+  text-align: center;
+  margin-top: 34px;
+  padding-top: 30px;
+  padding-bottom: 25px;
+}
+
+.footer-title {
+  width: 100%;
+  @include PoppinsBold;
+  font-size: 38px;
+  color: $white;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: 0.1px;
+  @include tablet {
+    font-size: 30px;
+    margin-top: 0;
+  }
+}
+
+.btn-contact {
+  @include Btn-rectangle;
+  @include tablet {
+    margin-bottom: 5px;
+  }
+  &:hover {
+    background: $white;
+    color: $black;
+  }
+}

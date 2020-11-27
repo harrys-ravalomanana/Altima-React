@@ -1,0 +1,290 @@
+/*Common styles*/
+body {
+  color: $black;
+}
+
+.image-bg {
+  @include BgFilter;
+  img {
+    @include mobile {
+      height: calc(100vh - 90px);
+      object-fit: cover;
+    }
+  }
+}
+
+.row {
+  @include flex-center;
+}
+
+.container {
+  width: 900px;
+  max-width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  @include tablet {
+    width: 100%;
+  }
+}
+
+.btn {
+  transition: 0.3s all;
+  text-decoration: none;
+  @include PoppinsBold;
+}
+
+.btn-red {
+  @include Btn-round;
+}
+
+/**Header block*/
+
+.header {
+  @include PoppinsSemiBold;
+  @include tablet {
+    text-align: center;
+    display: inline-flex;
+  }
+}
+
+.header-fixed {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background: $white;
+  @include tablet {
+    position: relative;
+  }
+}
+
+.logo {
+  display: inline-flex;
+  padding: 30px 0;
+  margin-right: 20px;
+  @include tablet {
+    padding: 20px 0;
+  }
+  img {
+    margin-right: 5px;
+    @include mobile {
+      width: 40px;
+      height: auto;
+    }
+  }
+  a {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  span {
+    font-size: 24px;
+    color: $blackText;
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+}
+
+.nav-block {
+  display: inline-flex;
+  margin-left: auto;
+  @include tablet {
+    margin-right: 0;
+  }
+  @include mobile {
+    display: none;
+  }
+  .menu-open & {
+    @include mobile {
+      display: block;
+      height: auto;
+      opacity: 1;
+      margin-right: 0;
+      background: rgba(0, 0, 0, 0.8);
+      width: 100%;
+      position: fixed;
+      left: 0;
+      top: 80px;
+      height: calc(100vh - 80px);
+      border: 1px solid $pink;
+      box-sizing: border-box;
+    }
+  }
+  ul {
+    list-style: none;
+    display: inline-flex;
+    @include tablet {
+      padding-left: 0;
+    }
+    @include mobile {
+      display: inline-block;
+      width: 100%;
+      margin: 0;
+    }
+  }
+  li {
+    padding: 20px;
+    font-size: 14px;
+    position: relative;
+    @include tablet {
+      padding: 0 15px;
+    }
+    @include mobile {
+      padding: 0;
+    }
+  }
+  > a {
+    text-transform: uppercase;
+  }
+  a {
+    text-decoration: none;
+    color: $blackText;
+    transition: 0.3s all;
+    @include mobile {
+      color: $white;
+      padding: 10px 25px;
+      display: inline-block;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: left;
+    }
+    &:hover {
+      color: $black;
+      @include mobile {
+        background: $pink;
+        color: $white;
+      }
+    }
+
+  }
+  .favori {
+    background: url('./../img/favoris.png') no-repeat 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-top: -3px;
+    @include mobile {
+      display: none;
+    }
+    &:hover, .favoris-open & {
+      background-image: url('./../img/favoris_hov.png');
+      @include mobile {
+        background: none;
+      }
+    }
+  }
+
+  //for submenu
+  ul.favoris-sub-nav {
+    margin-top: 20px;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    padding-left: 0;
+    width: 400px;
+    background: #fff;
+    border: 2px solid $pink;
+    box-sizing: border-box;
+    border-radius: 6px;
+    max-height: 80vh;
+    overflow: auto;
+    .favoris-open & {
+      display: block;
+      @include mobile {
+        display: none;
+      }
+    }
+
+    li {
+      padding: 20px 0;
+      margin: 0 20px;
+      border-bottom: 1px solid $pink;
+      &:last-child {
+        border: 0;
+      }
+
+    }
+    .article-image {
+      object-fit: cover;
+    }
+    .article-link {
+      display: inline-flex;
+      align-items: center;
+      &:hover {
+        .article-title, .article-desc {
+          color: $pink;
+        }
+      }
+    }
+    .article-title {
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+  .sub-item-right {
+    margin-left: 20px;
+    text-align: left;
+  }
+}
+
+/*Porfolio*/
+.portfolio-wrapper {
+  color: $white;
+  position: relative;
+  display: block;
+  text-align: center;
+  margin-bottom: 57px;
+  padding-top: 110px;
+  @include tablet {
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+  .portfolio-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    display: inline-block;
+  }
+  .text-block {
+    display: inline-block;
+    padding: 0 20px;
+  }
+  .h2-title {
+    width: 100%;
+    font-size: 60px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    @include PoppinsBold;
+    @include tablet {
+      font-size: 40px;
+      margin-top: 0;
+    }
+    @include mobile {
+      font-size: 36px;
+    }
+  }
+  .h2-subtitle {
+    font-size: 20px;
+    margin-bottom: 72px;
+    @include BitterRegular;
+    @include tablet {
+      margin-bottom: 40px;
+    }
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+// burger menu
+.toggle-menu {
+  margin-left: auto;
+}

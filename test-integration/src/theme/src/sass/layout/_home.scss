@@ -1,0 +1,281 @@
+/**common styles*/
+body {
+  color: $blackText;
+  @include BitterRegular;
+}
+
+.h3-title {
+  width: 100%;
+  font-size: 40px;
+  color: $blackTitle;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  line-height: 1.2;
+  @include PoppinsBold;
+  @include tablet {
+    font-size: 30px;
+  }
+}
+
+.h3-subtitle {
+  width: 100%;
+  color: $blackText;
+  font-size: 20px;
+  @include BitterRegular;
+  @include tablet {
+    font-size: 16px;
+    font-family: bitterregular;
+    margin: 10px auto;
+  }
+
+}
+
+/**professional services block**/
+.flex-center {
+  @include flex-center;
+}
+
+.third-block {
+  @include ThirdBlock
+}
+
+.services-block {
+  .logo-block {
+    display: flex;
+    margin: 0 auto 35px;
+  }
+  .logo-title {
+    text-transform: uppercase;
+    color: $blackTitle;
+    font-size: 18px;
+    @include PoppinsBold;
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+  .logo-description {
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 8px;
+    @include tablet {
+      font-size: 13px;
+      line-height: 1.3;
+    }
+  }
+}
+
+.professional-wrapper {
+  text-align: center;
+  margin-bottom: 85px;
+  @include tablet {
+    margin-bottom: 30px;
+  }
+  .services-block {
+    @include flex-center;
+    padding-top: 70px;
+    @include tablet {
+      padding-top: 15px;
+    }
+  }
+  .third-block {
+    &.beautiful {
+      margin-left: 0;
+      .logo-block {
+        @include sprite($icons-067-heart);
+      }
+    }
+    &.responsive {
+      .logo-block {
+        @include sprite($icons-077-responsive);
+      }
+    }
+    &.marketing {
+      margin-right: 0;
+      .logo-block {
+        @include sprite($icons-005-graph);
+      }
+    }
+  }
+
+}
+
+/**Just Relax block**/
+.just-relax-block {
+  display: flex;
+
+  .left-bg {
+    width: 30.7%;
+    background: url("./../img/angular-bg.png") no-repeat right center #e9e9e9;
+    background-size: contain;
+    @include mobile {
+      display: none;
+    }
+  }
+  .relax-wrapper {
+    width: 69.3%;
+    position: relative;
+    @include mobile {
+      width: 100%;
+    }
+    .image-bg {
+      width: 100%;
+      img {
+        @include mobile {
+          height: auto;
+        }
+      }
+      @include mobile {
+        &:before {
+          content: none;
+        }
+      }
+    }
+  }
+  .relax-inner {
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    transform: translateY(-50%);
+    margin: 0;
+    padding-right: 20px;
+    max-width: 475px;
+    z-index: 1;
+    @include desktop {
+      max-width: 100%;
+    }
+    @include tablet {
+      left: 0;
+      padding: 15px 3%;
+      box-sizing: border-box;
+    }
+    @include mobile {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+      background: $black;
+    }
+  }
+  .h3-title {
+    color: $white;
+    line-height: 1.2;
+    margin-bottom: 35px;
+    @include desktop {
+      font-size: 28px;
+      margin-bottom: 15px;
+      margin-top: 5px;
+    }
+    span {
+      color: $pink;
+    }
+  }
+  .h3-subtitle {
+    color: $white;
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+  .relax-check {
+    padding: 0;
+    margin-bottom: 55px;
+    @include tablet {
+      margin-bottom: 20px;
+      margin-top: 0;
+      font-size: 14px;
+    }
+    li {
+      list-style: none;
+      position: relative;
+      color: $white;
+      padding: 0 0 15px 50px;
+      line-height: 32px;
+      @include tablet {
+        padding-bottom: 6px;
+      }
+      &:before {
+        content: '';
+        @include sprite($icons-check);
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
+}
+
+/**Framework & tools block**/
+.framework-wrapper {
+  text-align: center;
+  margin-bottom: 30px;
+  @include tablet {
+    margin-bottom: 0;
+  }
+  .h3-subtitle {
+    margin-top: 5px;
+    margin-bottom: 100px;
+    @include tablet {
+      margin-bottom: 50px;
+    }
+  }
+  .services-block {
+    position: relative;
+    &:before {
+      content: '';
+      width: 55%;
+      height: 2px;
+      position: absolute;
+      background: $blackText;
+      top: 13%;
+      z-index: 0;
+      @include mobile {
+        content: none;
+      }
+    }
+  }
+  .top-block {
+    width: 50%;
+    margin: auto;
+    background: $white;
+    z-index: 1;
+    position: relative;
+    padding-top: 100px;
+  }
+
+  .logo-block {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    &:before {
+      content: '';
+      width: 50px;
+      height: 50px;
+      border: 2px solid $blackText;
+      border-radius: 100%;
+      padding: 20px 20px;
+      position: absolute;
+      top: -16px;
+      left: -16px;
+    }
+  }
+  .third-block {
+    &.reactjs {
+      margin-left: 0;
+      .logo-block {
+        @include sprite($reactjs);
+      }
+    }
+    &.git {
+      .logo-block {
+        @include sprite($git);
+      }
+    }
+    &.sass {
+      margin-right: 0;
+      .logo-block {
+        @include sprite($sass);
+      }
+    }
+  }
+}

@@ -1,0 +1,156 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$git-name: 'git';
+$git-x: 77px;
+$git-y: 0px;
+$git-offset-x: -77px;
+$git-offset-y: 0px;
+$git-width: 60px;
+$git-height: 60px;
+$git-total-width: 205px;
+$git-total-height: 160px;
+$git-image: '../img/sprites/generated-sprite.png';
+$git: (77px, 0px, -77px, 0px, 60px, 60px, 205px, 160px, '../img/sprites/generated-sprite.png', 'git', );
+$icons-005-graph-name: 'icons-005-graph';
+$icons-005-graph-x: 0px;
+$icons-005-graph-y: 109px;
+$icons-005-graph-offset-x: 0px;
+$icons-005-graph-offset-y: -109px;
+$icons-005-graph-width: 51px;
+$icons-005-graph-height: 51px;
+$icons-005-graph-total-width: 205px;
+$icons-005-graph-total-height: 160px;
+$icons-005-graph-image: '../img/sprites/generated-sprite.png';
+$icons-005-graph: (0px, 109px, 0px, -109px, 51px, 51px, 205px, 160px, '../img/sprites/generated-sprite.png', 'icons-005-graph', );
+$icons-067-heart-name: 'icons-067-heart';
+$icons-067-heart-x: 137px;
+$icons-067-heart-y: 51px;
+$icons-067-heart-offset-x: -137px;
+$icons-067-heart-offset-y: -51px;
+$icons-067-heart-width: 55px;
+$icons-067-heart-height: 51px;
+$icons-067-heart-total-width: 205px;
+$icons-067-heart-total-height: 160px;
+$icons-067-heart-image: '../img/sprites/generated-sprite.png';
+$icons-067-heart: (137px, 51px, -137px, -51px, 55px, 51px, 205px, 160px, '../img/sprites/generated-sprite.png', 'icons-067-heart', );
+$icons-077-responsive-name: 'icons-077-responsive';
+$icons-077-responsive-x: 0px;
+$icons-077-responsive-y: 0px;
+$icons-077-responsive-offset-x: 0px;
+$icons-077-responsive-offset-y: 0px;
+$icons-077-responsive-width: 77px;
+$icons-077-responsive-height: 51px;
+$icons-077-responsive-total-width: 205px;
+$icons-077-responsive-total-height: 160px;
+$icons-077-responsive-image: '../img/sprites/generated-sprite.png';
+$icons-077-responsive: (0px, 0px, 0px, 0px, 77px, 51px, 205px, 160px, '../img/sprites/generated-sprite.png', 'icons-077-responsive', );
+$icons-check-name: 'icons-check';
+$icons-check-x: 77px;
+$icons-check-y: 60px;
+$icons-check-offset-x: -77px;
+$icons-check-offset-y: -60px;
+$icons-check-width: 33px;
+$icons-check-height: 32px;
+$icons-check-total-width: 205px;
+$icons-check-total-height: 160px;
+$icons-check-image: '../img/sprites/generated-sprite.png';
+$icons-check: (77px, 60px, -77px, -60px, 33px, 32px, 205px, 160px, '../img/sprites/generated-sprite.png', 'icons-check', );
+$reactjs-name: 'reactjs';
+$reactjs-x: 0px;
+$reactjs-y: 51px;
+$reactjs-offset-x: 0px;
+$reactjs-offset-y: -51px;
+$reactjs-width: 65px;
+$reactjs-height: 58px;
+$reactjs-total-width: 205px;
+$reactjs-total-height: 160px;
+$reactjs-image: '../img/sprites/generated-sprite.png';
+$reactjs: (0px, 51px, 0px, -51px, 65px, 58px, 205px, 160px, '../img/sprites/generated-sprite.png', 'reactjs', );
+$sass-name: 'sass';
+$sass-x: 137px;
+$sass-y: 0px;
+$sass-offset-x: -137px;
+$sass-offset-y: 0px;
+$sass-width: 68px;
+$sass-height: 51px;
+$sass-total-width: 205px;
+$sass-total-height: 160px;
+$sass-image: '../img/sprites/generated-sprite.png';
+$sass: (137px, 0px, -137px, 0px, 68px, 51px, 205px, 160px, '../img/sprites/generated-sprite.png', 'sass', );
+$spritesheet-width: 205px;
+$spritesheet-height: 160px;
+$spritesheet-image: '../img/sprites/generated-sprite.png';
+$spritesheet-sprites: ($git, $icons-005-graph, $icons-067-heart, $icons-077-responsive, $icons-check, $reactjs, $sass, );
+$spritesheet: (205px, 160px, '../img/sprites/generated-sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
